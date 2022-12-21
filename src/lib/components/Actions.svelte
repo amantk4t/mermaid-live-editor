@@ -183,8 +183,8 @@
 <Card title="Actions" isOpen={true}>
   <div class="flex flex-wrap gap-2 m-2">
     {#if isClipboardAvailable()}
-      <button class="action-btn w-full" on:click={onCopyClipboard}
-        ><i class="far fa-copy mr-2" /> Copy Image to clipboard
+      <button class="action-btn w-full remove-case" on:click={onCopyClipboard}
+        ><i class="far fa-copy mr-2" /> Copy Image To Clipboard
       </button>
     {/if}
     <button id="downloadPNG" class="action-btn flex-grow" on:click={onDownloadPNG}>
@@ -203,11 +203,11 @@
         <i class="fas fa-external-link-alt mr-2" /> SVG
       </button>
     </a>
-    <a target="_blank" rel="noreferrer" class="flex-grow" href={krokiUrl}>
+    <!-- <a target="_blank" rel="noreferrer" class="flex-grow" href={krokiUrl}>
       <button class="action-btn w-full">
         <i class="fas fa-external-link-alt mr-2" /> Kroki
       </button>
-    </a>
+    </a> -->
 
     <div class="flex gap-2 items-center">
       PNG size
@@ -237,7 +237,7 @@
     <div class="w-full flex gap-2 items-center">
       <input class="input" id="markdown" type="text" value={mdCode} on:click={onCopyMarkdown} />
       <label for="markdown">
-        <button class="btn btn-primary btn-md flex-auto" on:click={onCopyMarkdown}>
+        <button class="btn btn-primary btn-md flex-auto normal-case" on:click={onCopyMarkdown}>
           Copy Markdown
         </button>
       </label>
@@ -251,15 +251,21 @@
         bind:value={gistURL}
         placeholder="Enter Gist URL" />
       <label for="gist">
-        <button class="btn btn-primary btn-md flex-auto" on:click={loadGist}> Load Gist </button>
+        <button class="btn btn-primary btn-md flex-auto normal-case" on:click={loadGist}>
+          Load Gist
+        </button>
       </label>
     </div>
     {#if isNetlify}
       <div class="w-full flex items-center justify-center">
-        <a class="link underline text-gray-500 text-sm" href="https://netlify.com">
-          This site is powered by Netlify
-        </a>
+        <a class="link underline text-gray-500 text-sm" href="https://struck.ai/"> 2023 </a>
       </div>
     {/if}
   </div>
 </Card>
+
+<style>
+  .remove-case {
+    text-transform: none !important;
+  }
+</style>

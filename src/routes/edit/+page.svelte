@@ -12,7 +12,8 @@
   import type { Tab, DocConfig, EditorMode, ValidatedState } from '$lib/types';
   import { base } from '$app/paths';
 
-  const docURLBase = 'https://mermaid-js.github.io/mermaid';
+  const docURLBase = 'https://struck.ai/diagrams';
+  // const docURLBase = 'https://mermaid-js.github.io/mermaid';
   const docMap: DocConfig = {
     graph: {
       code: '/#/flowchart',
@@ -113,7 +114,7 @@
   <Navbar />
   <div class="flex-1 flex overflow-hidden">
     <div class="hidden md:flex flex-col" id="editorPane" style="width: 40%">
-      <Card on:select={tabSelectHandler} {tabs} isCloseable={false} {activeTabID} title="Mermaid">
+      <Card on:select={tabSelectHandler} {tabs} isCloseable={false} {activeTabID} title="Struck">
         <div slot="actions" class="flex flex-row items-center">
           <div class="form-control flex-row items-center">
             <label class="cursor-pointer label" for="autoSync">
@@ -138,7 +139,7 @@
             class="btn btn-secondary btn-xs"
             title="View documentation for {docKey.replace('Diagram', '')} diagram">
             <a target="_blank" rel="noreferrer" href={docURL} data-cy="docs">
-              <i class="fas fa-book mr-1" />Docs
+              <i class="fas fa-book mr-1" />Help
             </a>
           </button>
         </div>
@@ -168,9 +169,9 @@
             href={`${base}/view#${$stateStore.serialized}`}
             target="_blank"
             rel="noreferrer"
-            class="btn btn-secondary btn-xs"
+            class="btn btn-secondary btn-xs normal-case"
             title="View diagram in new page"
-            ><i class="fas fa-external-link-alt mr-1" />Full screen</a>
+            ><i class="fas fa-external-link-alt mr-1" />Full Screen</a>
         </div>
 
         <div class="flex-1 overflow-auto">

@@ -9,7 +9,7 @@
 FROM node:18.12.1 as mermaid-live-editor-builder 
 COPY --chown=node:node . /home
 WORKDIR /home
-RUN yarn install
+RUN yarn 
 RUN yarn build
 
 FROM nginx:alpine as mermaid-live-editor-runner

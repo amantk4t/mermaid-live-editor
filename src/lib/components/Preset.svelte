@@ -65,7 +65,7 @@
     ORDER ||--|{ ORDER-ITEM : includes
     PRODUCT-CATEGORY ||--|{ PRODUCT : contains
     PRODUCT ||--o{ ORDER-ITEM : "ordered in"`,
-    'User Journey': `journey
+    Journey: `journey
     title My working day
     section Go to work
       Make tea: 5: Me
@@ -116,16 +116,16 @@
   // Adding in this array will add an icon to the preset menu
   const newDiagrams: SampleTypes[] = ['Mindmap'];
   const diagramOrder: SampleTypes[] = [
-    'Sequence',
     'Flow',
-    'Class',
     'State',
     'ER',
     'Gantt',
-    'User Journey',
-    'Git',
     'Pie',
+    'Journey',
     'Mindmap'
+    // 'Sequence',
+    // 'Class',
+    // 'Git',
   ];
 </script>
 
@@ -137,7 +137,7 @@
         on:click={() => loadSampleDiagram(sample)}>
         {sample}
         {#if newDiagrams.includes(sample)}
-          <span class="ml-2 fa fa-heart" />
+          <!-- <span class="ml-2 fa fa-heart" /> -->
         {/if}
       </button>
     {/each}

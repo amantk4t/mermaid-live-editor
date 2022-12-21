@@ -16,33 +16,36 @@
   }
   const links: Link[] = [
     {
-      title: 'Documentation',
-      href: 'https://mermaid-js.github.io/mermaid/intro/n00b-gettingStarted.html'
+      title: 'Docs',
+      // href: 'https://mermaid-js.github.io/mermaid/intro/n00b-gettingStarted.html'
+      href: 'https://struck.ai/getStarted.html'
     },
     {
-      title: 'Tutorial',
-      href: 'https://mermaid-js.github.io/mermaid/config/Tutorials.html'
+      title: 'Tutorials',
+      href: 'https://struck.ai/tutorials.html'
+      // href: 'https://mermaid-js.github.io/mermaid/config/Tutorials.html'
     },
     {
-      title: 'Mermaid',
-      href: 'https://github.com/mermaid-js/mermaid'
-    },
-    {
-      title: 'CLI',
-      href: 'https://github.com/mermaid-js/mermaid-cli'
-    },
-    {
-      title: '',
-      href: 'https://github.com/mermaid-js/mermaid-live-editor',
-      icon: 'fab fa-github fa-lg'
+      title: 'Struck',
+      href: 'https://struck.ai/'
+      // href: 'https://github.com/mermaid-js/mermaid'
     }
+    // {
+    //   title: 'CLI',
+    //   href: 'https://github.com/mermaid-js/mermaid-cli'
+    // },
+    // {
+    //   title: '',
+    //   href: 'https://github.com/mermaid-js/mermaid-live-editor',
+    //   icon: 'fab fa-github fa-lg'
+    // }
   ];
 </script>
 
 <div class="navbar shadow-lg bg-primary p-0">
   <div class="flex-1 px-2 mx-2">
     <span class="text-lg font-bold">
-      <a href="/">Mermaid<span class="text-xs font-thin">v{version}</span> Live Editor</a>
+      <a href="/">Struck<span class="text-xs font-thin mx-1">v{version}</span> Live Editor</a>
     </span>
   </div>
   <label for="menu-toggle" class="pointer-cursor lg:hidden block"
@@ -61,7 +64,7 @@
     <ul class="lg:flex items-center justify-between text-base pt-4 lg:pt-0">
       {#each links as { title, href, icon }}
         <li>
-          <a class="btn btn-ghost" target="_blank" rel="noreferrer" {href}>
+          <a class="btn btn-ghost normal-case" target="_blank" rel="noreferrer" {href}>
             {#if icon}
               <i class={icon} />
             {/if}
