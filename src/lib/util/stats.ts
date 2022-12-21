@@ -10,13 +10,16 @@ export const initAnalytics = async (): Promise<void> => {
         import('analytics-plugin-plausible')
       ]);
       analytics = Analytics({
-        app: 'mermaid-live-editor',
+        // app: 'mermaid-live-editor',
+        app: 'struck',
         plugins: [
           plausible({
-            domain: 'mermaid.live',
+            // domain: 'mermaid.live',
+            domain: 'struck.netlify.app',
             hashMode: false,
             trackLocalhost: false, // By default 'false'
-            apiHost: 'https://plausible.io'
+            apiHost: 'https://netlify.app'
+            // apiHost: 'https://plausible.io'
           })
         ]
       });
