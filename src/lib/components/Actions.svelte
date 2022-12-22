@@ -161,22 +161,24 @@
     logEvent('loadGist');
   };
 
-  let iUrl: string;
+  let iUrl: string = 'struck.ai';
   let svgUrl: string;
-  let krokiUrl: string;
+  // let krokiUrl: string;
   let mdCode: string;
   let imagemodeselected = 'auto';
   let userimagesize = 1080;
 
   let isNetlify = false;
-  if (browser && ['mermaid.live', 'netlify'].some((path) => window.location.host.includes(path))) {
+  if (browser && ['struck.ai', 'netlify'].some((path) => window.location.host.includes(path))) {
     isNetlify = true;
   }
   stateStore.subscribe(({ code, serialized }) => {
     iUrl = `${rendererUrl}/img/${serialized}?type=png`;
     svgUrl = `${rendererUrl}/svg/${serialized}`;
-    krokiUrl = `${krokiRendererUrl}/mermaid/svg/${pakoSerde.serialize(code)}`;
-    mdCode = `[![](${iUrl})](${window.location.protocol}//${window.location.host}${window.location.pathname}#${serialized})`;
+    // krokiUrl = `${krokiRendererUrl}/mermaid/svg/${pakoSerde.serialize(code)}`;
+    mdCode = `[![](${iUrl.replace('mermaid.ink', 'struck.ai')})](${window.location.protocol}//${
+      window.location.host
+    }${window.location.pathname}#${serialized})`;
   });
 </script>
 
