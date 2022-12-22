@@ -15,7 +15,7 @@
     minimap: {
       enabled: false
     },
-    theme: 'mermaid',
+    theme: 'black',
     overviewRulerLanes: 0
   };
   let text = '';
@@ -50,7 +50,7 @@
   });
 
   themeStore.subscribe(({ isDark }) => {
-    editor && Monaco?.editor.setTheme(isDark ? 'mermaid-dark' : 'mermaid');
+    editor && Monaco?.editor.setTheme(isDark ? 'dark' : 'wireframe');
   });
 
   const handleUpdate = (text: string, mode: EditorMode) => {

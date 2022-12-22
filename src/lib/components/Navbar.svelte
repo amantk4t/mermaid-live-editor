@@ -1,6 +1,9 @@
 <script context="module" lang="ts">
-  import { version } from 'mermaid/package.json';
+  // import { version } from 'mermaid/package.json';
   import { analytics } from '$lib/util/stats';
+
+  let version = '0.8.1';
+
   void analytics?.track('version', {
     mermaidVersion: version
   });

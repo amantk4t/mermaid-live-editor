@@ -139,7 +139,7 @@
             class="btn btn-secondary btn-xs"
             title="View documentation for {docKey.replace('Diagram', '')} diagram">
             <a target="_blank" rel="noreferrer" href={docURL} data-cy="docs">
-              <i class="fas fa-book mr-1" />Help
+              <i class="fas fa-book mr-1" /> <span class="normal-case"> Help </span>
             </a>
           </button>
         </div>

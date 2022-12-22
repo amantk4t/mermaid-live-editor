@@ -176,9 +176,7 @@
     iUrl = `${rendererUrl}/img/${serialized}?type=png`;
     svgUrl = `${rendererUrl}/svg/${serialized}`;
     // krokiUrl = `${krokiRendererUrl}/mermaid/svg/${pakoSerde.serialize(code)}`;
-    mdCode = `[![](${iUrl.replace('mermaid.ink', 'struck.ai')})](${window.location.protocol}//${
-      window.location.host
-    }${window.location.pathname}#${serialized})`;
+    mdCode = `[![](${iUrl})](${window.location.protocol}//${window.location.host}${window.location.pathname}#${serialized})`;
   });
 </script>
 
@@ -189,19 +187,19 @@
         ><i class="far fa-copy mr-2" /> Copy Image To Clipboard
       </button>
     {/if}
-    <button id="downloadPNG" class="action-btn flex-grow" on:click={onDownloadPNG}>
+    <button id="downloadPNG" class="action-btn flex-grow upper-case" on:click={onDownloadPNG}>
       <i class="fas fa-download mr-2" /> PNG
     </button>
-    <button id="downloadSVG" class="action-btn flex-grow" on:click={onDownloadSVG}>
+    <button id="downloadSVG" class="action-btn flex-grow upper-case" on:click={onDownloadSVG}>
       <i class="fas fa-download mr-2" /> SVG
     </button>
     <a target="_blank" rel="noreferrer" class="flex-grow" href={iUrl}>
-      <button class="action-btn w-full">
+      <button class="action-btn w-full upper-case">
         <i class="fas fa-external-link-alt mr-2" /> PNG
       </button>
     </a>
     <a target="_blank" rel="noreferrer" class="flex-grow" href={svgUrl}>
-      <button class="action-btn w-full">
+      <button class="action-btn w-full upper-case">
         <i class="fas fa-external-link-alt mr-2" /> SVG
       </button>
     </a>
@@ -269,5 +267,8 @@
 <style>
   .remove-case {
     text-transform: none !important;
+  }
+  .upper-case {
+    text-transform: uppercase !important;
   }
 </style>

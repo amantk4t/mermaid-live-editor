@@ -26,10 +26,12 @@
         });
     }
 
+    // const isDarkMode = true;
     const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
     if ($themeStore.theme === undefined) {
-      setTheme(isDarkMode ? 'dark' : 'light');
+      // setTheme(isDarkMode ? 'black' : 'wireframe');
+      setTheme(true ? 'black' : 'wireframe');
     }
 
     themeStore.subscribe(({ theme, isDark }) => {

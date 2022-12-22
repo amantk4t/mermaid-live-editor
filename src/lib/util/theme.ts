@@ -10,7 +10,7 @@ export interface ThemeConfig {
 
 export const themeStore: Writable<ThemeConfig> = persist(
   writable({
-    isDark: false
+    isDark: true
   }),
   localStorage(),
   'themeStore'
@@ -32,7 +32,7 @@ export const setTheme = (theme: string): void => {
     theme = theme.split(' ')[1].trim();
   }
   const isDark = darkThemes.includes(theme);
-  console.log('Setting theme', theme);
+  console.log('Setting theme is is ', theme);
   themeStore.set({ theme, isDark });
   logEvent('themeChange', { theme, isDark });
 };
